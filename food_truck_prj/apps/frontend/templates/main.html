@@ -1,0 +1,58 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Truck Search</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <script src="{% static 'js/script.js' %}"></script>
+</head>
+<body>
+    {% csrf_token %}
+    <script src="{% static 'js/script.js' %}"></script>
+    <script>
+    </script>
+    <div id="container">
+        <div id="sidebar">            
+            <h1>Food Truck Search</h1>
+            <label for="facilityType">Favorite Foods:</label>
+            <input type="text" id="newFavoriteFood" placeholder="Add new favorite food">
+            <button onclick="addFavoriteFood()">Add</button>
+            <ul id="favoriteFoodList">
+                <!-- Favorite foods will be dynamically added here -->
+            </ul>
+            <label for="facilityType">Facility Type:</label>
+            <select id="facilityType">
+                <option value="Truck">Truck</option>
+                <option value="Push Cart">Cart</option>
+            </select>
+
+            <label for="radius">Radius:</label>
+            <select id="radius">
+                <option value="1">1 km</option>
+                <option value="1">3 km</option>
+                <option value="5">5 km</option> 
+                <option value="5">10 km</option>
+            </select>
+            <label for="location">Location:</label>
+            <input type="text" id="location" placeholder="Enter location">
+
+            <button onclick="searchFoodTrucks()">Search</button>
+            <button onclick="getCurrentLocation()">Use Current Location</button>
+            <button id="reset-button" onclick="resetResults()">Reset Results</button>
+        </div>
+
+        <div id="result-container">
+                <div id="result"></div>
+            <div id="pagination"></div>
+        </div>
+
+        <div id="top-bar">
+            <button id="logout-button" onclick="logout()">Logout</button>
+        </div>
+
+    </div>
+</body>
+</html>
