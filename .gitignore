@@ -1,0 +1,12 @@
+# Log files
+*.log
+
+# Jupyter files
+*.ipynb
+
+#migrations
+food_truck_prj/apps/foodtrucks/migrations/*
+food_truck_prj/apps/foodtrucks/__pycache__
+food_truck_prj/food_truck_prj/__pycache__
+food_truck_prj/utils/__pycache__
+
